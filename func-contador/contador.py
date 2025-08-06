@@ -1,3 +1,11 @@
+import unicodedata
+
+def remover_acentos(palavra):
+    return ''.join(
+        letra for letra in unicodedata.normalize('NFD', palavra)
+        if unicodedata.category(letra) != 'Mn'
+    )
+
 def contator(texto):
     texto = texto.lower()
     palavras = texto.split()
