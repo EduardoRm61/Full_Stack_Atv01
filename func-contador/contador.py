@@ -11,6 +11,7 @@ def contator(texto):
     palavras = texto.split()
     contagem = {}
     for palavra in palavras:
+        palavra = remover_acentos(palavra)
         if palavra in contagem:
             contagem[palavra] += 1
         else:
